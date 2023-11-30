@@ -1,7 +1,10 @@
 from django.urls import path
 
-from questions.views import index
+from questions.views import index,greet
+  ##or
+# from  .views import index,greet
 
 urlpatterns = [
-    path('questions/index',index)
+    path('index',index),
+    path('greet',greet)
 ]
