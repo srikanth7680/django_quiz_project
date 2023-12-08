@@ -4,7 +4,7 @@ from questions.views import index,question_list,question_details,question_detail
   ##or
 # from  .views import index,greet
 from questions import views
-from questions.apis import QuestionList
+from questions.apis import QuestionList,QuestionRetrieve
 from questions.models import Question
 
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     path('question/<int:question_id>',views.question_details),
     path('question_temp/<int:question_id>',views.question_details_template),
 
-    path('drf/questions', QuestionList.as_view())
+    path('drf/questions', QuestionList.as_view()),
+    path('drf/<int:pk>/',QuestionRetrieve.as_view())
 ]
