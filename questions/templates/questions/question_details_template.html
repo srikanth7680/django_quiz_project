@@ -9,6 +9,9 @@
     <p>{{ question }} </p>
     <p>{{ category }} </p>
     <p>{{ added_date }} </p>
-
+    {% for question in questions %}
+    {{ question }}
+    <p><a href="/questions/question_temp/{{question.id}}">{{question.question}}</a> </p>
+    {% endfor %}
 </body>
 </html>

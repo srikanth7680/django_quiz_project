@@ -4,10 +4,14 @@ from questions.views import index,question_list,question_details,question_detail
   ##or
 # from  .views import index,greet
 from questions import views
+from questions.apis import QuestionList
+from questions.models import Question
 
 urlpatterns = [
     path('index',index),
-    path('question_list',question_list),
-    path('question/<int:question_id>',question_details),
-    path('question_temp/<int:question_id>',question_details_template)
+    path('question_list',views.question_list),
+    path('question/<int:question_id>',views.question_details),
+    path('question_temp/<int:question_id>',views.question_details_template),
+
+    path('drf/questions', QuestionList.as_view())
 ]

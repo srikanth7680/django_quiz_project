@@ -8,8 +8,9 @@
     <h1 style="color:red">Hello World!!!</h1>
     <p>This is template</p>
     <button style="color:blue">click Here</button>
-{% for question in question %}
-   <p>{{ question }} </p>
-{% endfor %}
+
+   {% for question in questions %}
+    <p> <a href="/questions/question_temp/{{question.id}}"> {{question.question}}</a> </p>
+    {% endfor %}
 </body>
 </html>
