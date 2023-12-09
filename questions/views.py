@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from questions.models import Question, Answer
+from django.contrib import admin
 
 # Create your views here.
 def index(request):
