@@ -11,6 +11,8 @@ class Question(models.Model):
     def __str__(self):
         return self.question
 
+
+
 class Answer(models.Model):
     Question = models.ForeignKey(Question,on_delete=models.DO_NOTHING)
     answer = models.CharField(max_length=100)

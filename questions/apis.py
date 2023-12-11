@@ -2,6 +2,7 @@ from questions.serializers import QuestionListSerializer,UserSerializer
 from questions.models import Question
 from rest_framework import generics
 
+####Generic View
 
 ##List and Create
 class QuestionList(generics.ListCreateAPIView):
@@ -19,7 +20,7 @@ from rest_framework.views import APIView
 from rest_framework import viewsets
 from django.shortcuts import get_object_or_404
 
-
+#####ViewSets in DRF
 class UserViewSet(viewsets.ViewSet):
     def list(self, request):
         queryset = User.objects.all()
@@ -31,7 +32,27 @@ class UserViewSet(viewsets.ViewSet):
         user = get_object_or_404(queryset, pk=pk)
         serializer = UserSerializer(user)
         return Response(serializer.data)
+    def create(self, request):
+        pass
 
+
+    def update(self, request, pk=None):
+        pass
+
+    def partial_update(self, request, pk=None):
+        pass
+
+
+    def destroy(self, request, pk=None):
+        pass
+
+
+
+
+
+
+
+###APIView
 class ListUsers(APIView):
     def get(self,request,format = None):
 
